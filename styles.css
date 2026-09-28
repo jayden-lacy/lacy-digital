@@ -1112,3 +1112,139 @@ main {
     padding: 22px;
   }
 }
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 85px;
+  padding-block: 85px;
+  align-items: center;
+}
+.about-hero h1 {
+  font-size: clamp(3rem, 5vw, 4.75rem);
+  margin: 25px 0;
+  font-weight: 600;
+}
+.about-hero h1 span {
+  color: var(--blue);
+}
+.about-hero .about-lead {
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+.about-hero .button {
+  margin-top: 28px;
+}
+.studio-note {
+  background: var(--pale);
+  border-radius: 20px;
+  padding: 38px;
+  border-top: 5px solid var(--blue);
+}
+.studio-note h2 {
+  font-size: 2.4rem;
+  margin: 24px 0;
+}
+.studio-note p + p {
+  margin-top: 18px;
+}
+.about-values {
+  background: var(--ink);
+  color: white;
+  padding-block: 65px;
+}
+.about-values .eyebrow {
+  color: #abbcff;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 32px;
+}
+.values-grid h2 {
+  font-size: 1.5rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+.values-grid p {
+  color: #d0d7e3;
+}
+.project-stages {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: stage;
+}
+.project-stages li {
+  counter-increment: stage;
+  border-bottom: 1px solid var(--line);
+  padding: 0 0 25px 36px;
+  margin-bottom: 25px;
+  position: relative;
+}
+.project-stages li:before {
+  content: counter(stage, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--blue);
+  font-size: 0.8rem;
+}
+.project-stages h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+.project-stages span {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.875rem;
+  color: var(--blue);
+}
+.service-example {
+  margin: 35px 0;
+  padding: 28px;
+  border-left: 3px solid var(--blue);
+  background: var(--pale);
+}
+.service-example h3 {
+  margin-top: 15px;
+}
+.service-example p + p {
+  margin-top: 15px;
+}
+.service-checklist {
+  color: var(--muted);
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+.service-checklist li {
+  margin-bottom: 12px;
+}
+.detail-deliverables + .service-example {
+  margin-top: 30px;
+}
+@media (max-width: 760px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-block: 45px;
+  }
+  .studio-note {
+    padding: 27px;
+  }
+  .studio-note h2 {
+    font-size: 2rem;
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .about-values {
+    padding-block: 45px;
+  }
+  .service-example {
+    padding: 22px;
+  }
+}
