@@ -1550,6 +1550,24 @@ main {
   padding-block: 75px;
   align-items: start;
 }
+.consultation-note {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  max-width: 440px;
+}
+.consultation-note h2 {
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  margin: 8px 0 12px;
+}
+.consultation-note .button { margin: 8px 0 0; }
+.consultation-note .booking-caption {
+  font-size: 13px;
+  line-height: 1.5;
+  margin-top: 12px;
+}
 .inquiry-heading h1 {
   font-size: clamp(2.8rem, 4.5vw, 4rem);
   margin: 22px 0;
