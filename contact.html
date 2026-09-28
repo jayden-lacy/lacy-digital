@@ -7,7 +7,7 @@
     <title>Contact Jayden | Lacy Digital</title>
     <meta
       name="description"
-      content="Discuss your website with Jayden Lacy. Email jaydenlacy308@gmail.com with your business details and project goals."
+      content="Discuss your new website or redesign with Jayden Lacy. Select a package and prepare an email inquiry, or contact Jayden directly."
     />
     <link
       rel="icon"
@@ -35,45 +35,224 @@
       >
     </header>
     <main id="main">
-      <section id="contact" class="contact-section">
-        <div class="wrap contact-layout">
-          <div>
-            <p class="eyebrow">LET’S MAKE SOMETHING GOOD.</p>
-            <h1>Your next chapter<br />starts with a hello.</h1>
-            <p>
-              Tell me what you do, what you need, and when you’d like to launch.
+      <section class="wrap inquiry-page">
+        <header class="inquiry-heading">
+          <p class="eyebrow">START A CONVERSATION</p>
+          <h1>Tell me about<br />your website.</h1>
+          <p>
+            A few details are enough to get started. I’ll review your inquiry
+            and follow up to discuss the scope.
+          </p>
+          <div class="direct-contact">
+            <a href="mailto:jaydenlacy308@gmail.com">jaydenlacy308@gmail.com</a
+            ><a href="tel:+19728356709">(972) 835-6709</a>
+          </div>
+        </header>
+        <div>
+          <form id="inquiry-form">
+            <fieldset class="project-selection">
+              <legend>Your project</legend>
+              <div class="form-field">
+                <label for="category">Project type</label
+                ><select id="category" name="category">
+                  <option value="new">New website</option>
+                  <option value="existing">Improve my website</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="package">Package</label
+                ><select id="package" name="package"></select>
+              </div>
+              <p id="selected-package" class="selection-caption"></p>
+            </fieldset>
+            <fieldset id="existing-url" hidden disabled>
+              <legend class="sr-only">Your existing website</legend>
+              <div class="form-field">
+                <label for="website">Current website URL</label
+                ><input
+                  type="url"
+                  id="website"
+                  name="website"
+                  required
+                  maxlength="250"
+                  placeholder="https://yourbusiness.com"
+                />
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>About your business</legend>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name">Your name</label
+                  ><input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    maxlength="250"
+                    autocomplete="name"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label
+                  ><input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    maxlength="250"
+                    autocomplete="email"
+                  />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="business">Business name</label
+                ><input
+                  type="text"
+                  id="business"
+                  name="business"
+                  required
+                  maxlength="250"
+                />
+              </div>
+              <div class="form-field">
+                <label for="description">What does your business do?</label
+                ><textarea
+                  id="description"
+                  name="description"
+                  required
+                  rows="3"
+                  maxlength="1500"
+                ></textarea>
+              </div>
+              <div class="form-field">
+                <label for="timeline">Preferred timeline</label
+                ><input
+                  type="text"
+                  id="timeline"
+                  name="timeline"
+                  required
+                  maxlength="250"
+                  placeholder="For example: next month, or flexible"
+                />
+              </div>
+            </fieldset>
+            <fieldset id="new-fields">
+              <legend>Your new website</legend>
+              <div class="form-field">
+                <label for="pages">Required pages or sections</label
+                ><textarea
+                  id="pages"
+                  name="pages"
+                  required
+                  rows="3"
+                  maxlength="1500"
+                ></textarea>
+              </div>
+              <div class="form-field">
+                <label for="content"
+                  >Are your logo, photos, and copy ready?</label
+                ><select id="content" name="content" required>
+                  <option value="">Select an option</option>
+                  <option>Everything is ready</option>
+                  <option>Some materials are ready</option>
+                  <option>I need help getting started</option>
+                  <option>I’m not sure yet</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="examples"
+                  >Example websites <span>(optional)</span></label
+                ><textarea
+                  id="examples"
+                  name="examples"
+                  rows="3"
+                  maxlength="1500"
+                ></textarea>
+              </div>
+            </fieldset>
+            <fieldset id="existing-fields" hidden disabled>
+              <legend>What should change?</legend>
+              <div class="form-field">
+                <label for="improvements">What needs improving?</label
+                ><textarea
+                  id="improvements"
+                  name="improvements"
+                  required
+                  rows="3"
+                  maxlength="1500"
+                ></textarea>
+              </div>
+              <div class="form-field">
+                <label for="preserve">What must stay?</label
+                ><textarea
+                  id="preserve"
+                  name="preserve"
+                  required
+                  rows="3"
+                  maxlength="1500"
+                ></textarea>
+              </div>
+              <div class="form-field">
+                <label for="platform"
+                  >Current platform <span>(optional)</span></label
+                ><input
+                  type="text"
+                  id="platform"
+                  name="platform"
+                  maxlength="250"
+                />
+              </div>
+            </fieldset>
+            <p class="form-explanation">
+              This form prepares an email; it does not send your inquiry. Your
+              details stay in this page until you open your email app or copy
+              the summary. You’ll need to send the email yourself.
             </p>
-          </div>
-          <div class="contact-action">
-            <a
-              class="button button-white"
-              href="mailto:jaydenlacy308@gmail.com?subject=Website%20project%20inquiry"
-              >Say hello to Jayden <span aria-hidden="true">↗</span></a
-            ><a class="email-label" href="mailto:jaydenlacy308@gmail.com"
-              >jaydenlacy308@gmail.com</a
-            >
-          </div>
-        </div>
-      </section>
-      <section class="section wrap inquiry-guide">
-        <div>
-          <p class="eyebrow">A GOOD PLACE TO START</p>
-          <h2>Tell me a little<br />about your business.</h2>
-        </div>
-        <div>
-          <p>
-            You don’t need a finished brief. A few details are enough to start a
-            conversation.
-          </p>
-          <ul>
-            <li>Your business name and what you do</li>
-            <li>Your current website, if you have one</li>
-            <li>What you’d like to build or improve</li>
-            <li>Your ideal timeline and budget</li>
-          </ul>
-          <p>
-            I’ll review your message and follow up to discuss the next steps.
-          </p>
+            <button class="button button-blue" type="submit">
+              Prepare email <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+          <section
+            id="email-preview"
+            class="email-preview"
+            hidden
+            aria-labelledby="email-preview-title"
+          >
+            <h2 id="email-preview-title" tabindex="-1">
+              Your inquiry is ready to send.
+            </h2>
+            <p>
+              Nothing has been sent. Open the draft in your email app and press
+              Send, or copy the summary into an email to
+              <a href="mailto:jaydenlacy308@gmail.com"
+                >jaydenlacy308@gmail.com</a
+              >.
+            </p>
+            <label for="inquiry-summary">Inquiry summary</label
+            ><textarea id="inquiry-summary" rows="12" readonly></textarea>
+            <div class="email-actions">
+              <a id="open-email" class="button button-blue"
+                >Open email draft ↗</a
+              ><button
+                id="copy-inquiry"
+                class="button button-dark"
+                type="button"
+              >
+                Copy summary
+              </button>
+            </div>
+            <p id="copy-status" role="status"></p>
+          </section>
+          <noscript
+            ><p>
+              This inquiry form needs JavaScript. Email
+              <a href="mailto:jaydenlacy308@gmail.com"
+                >jaydenlacy308@gmail.com</a
+              >
+              with your business name, project type, and timeline instead.
+            </p></noscript
+          >
         </div>
       </section>
     </main>
@@ -85,6 +264,7 @@
       <p>Independent by design. Personal by nature.</p>
       <span>© <span id="year">2026</span> Lacy Digital</span>
     </footer>
+    <script src="packages.js"></script>
     <script src="site.js"></script>
   </body>
 </html>
