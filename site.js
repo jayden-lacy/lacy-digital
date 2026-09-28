@@ -58,46 +58,26 @@ if (form) {
   );
   categorySelect.value = suppliedPackage?.category || categoryFromUrl();
 
-  function setPackages(selectedId = "custom") {
-    const matching = PACKAGES.filter(
-      (item) => item.category === categorySelect.value,
+  function updateProject(selectedId = "custom") {
+    const item = PACKAGES.find(
+      (item) =>
+        item.id === selectedId && item.category === categorySelect.value,
     );
-    packageSelect.replaceChildren(
-      new Option("Not sure / custom scope", "custom"),
-    );
-    for (const item of matching)
-      packageSelect.add(
-        new Option(
-          `${item.name} — ${item.starting ? "from " : ""}${item.price}`,
-          item.id,
-        ),
-      );
-    packageSelect.value = matching.some((item) => item.id === selectedId)
-      ? selectedId
-      : "custom";
-    updateProject();
-  }
-  function updateProject() {
-    const existing = categorySelect.value === "existing";
-    for (const id of ["existing-url", "existing-fields", "new-fields"]) {
-      const fieldset = document.getElementById(id);
-      const active = id === "new-fields" ? !existing : existing;
-      fieldset.hidden = !active;
-      fieldset.disabled = !active;
-    }
-    const item = PACKAGES.find((item) => item.id === packageSelect.value);
+    packageSelect.value = item?.id || "custom";
     document.getElementById("selected-package").textContent = item
-      ? item.summary
-      : "I’ll help you find a suitable scope.";
+      ? `Interested in ${item.name} — ${item.starting ? "from " : ""}${item.price}. We’ll confirm the scope before you commit.`
+      : "No package decision needed yet.";
+    const existing = categorySelect.value === "existing";
+    document.getElementById("website-field").hidden = !existing;
+    document.getElementById("website").disabled = !existing;
     const url = new URL(location.href);
     url.searchParams.set("category", categorySelect.value);
     url.searchParams.set("package", packageSelect.value);
     history.replaceState(null, "", url);
     preview.hidden = true;
   }
-  setPackages(suppliedPackage?.id);
-  categorySelect.addEventListener("change", () => setPackages());
-  packageSelect.addEventListener("change", updateProject);
+  updateProject(suppliedPackage?.id);
+  categorySelect.addEventListener("change", () => updateProject());
   form.addEventListener("input", () => {
     preview.hidden = true;
   });
@@ -122,29 +102,12 @@ if (form) {
       `Package: ${packageName}`,
       "",
     ];
-    const fields =
-      value("category") === "existing"
-        ? [
-            ["Current website", "website"],
-            ["Name", "name"],
-            ["Email", "email"],
-            ["Business", "business"],
-            ["What the business does", "description"],
-            ["Preferred timeline", "timeline"],
-            ["What needs improving", "improvements"],
-            ["What must stay", "preserve"],
-            ["Current platform", "platform"],
-          ]
-        : [
-            ["Name", "name"],
-            ["Email", "email"],
-            ["Business", "business"],
-            ["What the business does", "description"],
-            ["Preferred timeline", "timeline"],
-            ["Pages or sections", "pages"],
-            ["Content readiness", "content"],
-            ["Example websites", "examples"],
-          ];
+    const fields = [
+      ["Name", "name"],
+      ["Email", "email"],
+      ["Project details", "message"],
+      ["Current website", "website"],
+    ];
     for (const [label, key] of fields)
       if (value(key)) lines.push(`${label}: ${value(key)}`, "");
     summary.value = lines.join("\n");

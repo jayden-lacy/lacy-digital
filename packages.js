@@ -5,7 +5,7 @@ const PACKAGES = [
     category: "new",
     name: "Starter",
     price: "$500",
-    summary: "For a simple business introduction.",
+    summary: "One page for your services, work, and contact details.",
     features: [
       "One page with up to five sections",
       "Custom responsive design",
@@ -20,7 +20,8 @@ const PACKAGES = [
     category: "new",
     name: "Business",
     price: "$1,500",
-    summary: "A complete presence for your services and work.",
+    summary:
+      "Five focused pages to explain your services and help customers inquire.",
     badge: "Recommended for service businesses",
     features: [
       "Up to five pages",
@@ -34,10 +35,11 @@ const PACKAGES = [
   {
     id: "growth",
     category: "new",
-    name: "Growth",
+    name: "Custom Website",
     price: "$2,750",
     starting: true,
-    summary: "For a larger site with additional requirements.",
+    summary:
+      "For businesses needing multiple service pages or a larger content library.",
     features: [
       "Up to ten pages",
       "Custom responsive design and page structure",
@@ -61,7 +63,7 @@ const PACKAGES = [
       "Existing content reused",
       "One revision round",
     ],
-    note: "Platform and access reviewed first. Additional pages, platform migration, and new functionality are excluded.",
+    note: "Eligibility: one homepage with reusable content. I must confirm that your platform and access support the work before accepting the project. Additional pages, platform migration, and new functionality are excluded.",
   },
   {
     id: "redesign",
@@ -69,7 +71,8 @@ const PACKAGES = [
     name: "Redesign",
     price: "$1,500",
     starting: true,
-    summary: "A redesign of up to five existing pages.",
+    summary:
+      "For a site whose core pages still fit, but whose design needs replacing.",
     features: [
       "Responsive redesign and clearer navigation",
       "Light cleanup of supplied content",
@@ -87,7 +90,7 @@ const PACKAGES = [
     name: "Rebuild",
     price: "$2,750",
     starting: true,
-    summary: "A new structure and build for up to ten pages.",
+    summary: "For a site that needs a new structure or a replacement build.",
     features: [
       "Custom responsive design",
       "Revised navigation and page structure",

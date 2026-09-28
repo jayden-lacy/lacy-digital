@@ -13,7 +13,7 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23214bf2'/%3E%3Cpath d='M12 10v20h17v-6H18V10z' fill='white'/%3E%3C/svg%3E"
     />
-    <link rel="stylesheet" href="styles.css?v=20260927-paths" />
+    <link rel="stylesheet" href="styles.css?v=20260927-polish" />
   </head>
   <body class="page-contact">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -24,14 +24,11 @@
         ><span class="brand-period">.</span></a
       >
       <nav aria-label="Main navigation">
-        <a href="index.html">Home</a><a href="work.html">Your website</a
-        ><a href="services.html">Services</a><a href="about.html">About</a
-        ><a href="pricing.html">Pricing</a
+        <a href="index.html">Home</a><a href="pricing.html">Packages</a
+        ><a href="examples.html">Examples</a><a href="about.html">About</a
         ><a href="contact.html" aria-current="page">Contact</a>
       </nav>
-      <a
-        class="button button-small button-dark"
-        href="mailto:jaydenlacy308@gmail.com?subject=Website%20project%20inquiry"
+      <a class="button button-small button-dark" href="contact.html"
         >Let’s talk <span aria-hidden="true">↗</span></a
       >
     </header>
@@ -78,7 +75,7 @@
                 autocomplete="off"
               />
             </div>
-            <fieldset class="project-selection">
+            <fieldset>
               <legend>Your project</legend>
               <div class="form-field">
                 <label for="category">Project type</label
@@ -87,38 +84,17 @@
                   <option value="existing">Website Redesign</option>
                 </select>
               </div>
-              <div class="form-field">
-                <label for="package">Package</label
-                ><select id="package" name="package"></select>
-              </div>
+              <input id="package" name="package" type="hidden" value="custom" />
               <p id="selected-package" class="selection-caption"></p>
-            </fieldset>
-            <fieldset id="existing-url" hidden disabled>
-              <legend class="sr-only">Your existing website</legend>
-              <div class="form-field">
-                <label for="website">Current website URL</label
-                ><input
-                  type="url"
-                  id="website"
-                  name="website"
-                  required
-                  maxlength="250"
-                  placeholder="https://yourbusiness.com"
-                />
-              </div>
-            </fieldset>
-            <fieldset>
-              <legend>About your business</legend>
               <div class="form-row">
                 <div class="form-field">
                   <label for="name">Your name</label
                   ><input
-                    type="text"
                     id="name"
                     name="name"
-                    required
-                    maxlength="250"
                     autocomplete="name"
+                    required
+                    maxlength="150"
                   />
                 </div>
                 <div class="form-field">
@@ -127,127 +103,47 @@
                     type="email"
                     id="email"
                     name="email"
+                    autocomplete="email"
                     required
                     maxlength="250"
-                    autocomplete="email"
                   />
                 </div>
               </div>
               <div class="form-field">
-                <label for="business">Business name</label
+                <label for="message">What do you need help with?</label
+                ><textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="4"
+                  maxlength="2000"
+                  placeholder="Tell me a little about your business and what you want your website to do."
+                ></textarea>
+              </div>
+              <div class="form-field" id="website-field" hidden>
+                <label for="website"
+                  >Current website <span>(optional)</span></label
                 ><input
-                  type="text"
-                  id="business"
-                  name="business"
-                  required
+                  type="url"
+                  id="website"
+                  name="website"
                   maxlength="250"
-                />
-              </div>
-              <div class="form-field">
-                <label for="description">What does your business do?</label
-                ><textarea
-                  id="description"
-                  name="description"
-                  required
-                  rows="3"
-                  maxlength="1500"
-                ></textarea>
-              </div>
-              <div class="form-field">
-                <label for="timeline">Preferred timeline</label
-                ><input
-                  type="text"
-                  id="timeline"
-                  name="timeline"
-                  required
-                  maxlength="250"
-                  placeholder="For example: next month, or flexible"
-                />
-              </div>
-            </fieldset>
-            <fieldset id="new-fields">
-              <legend>Your new website</legend>
-              <div class="form-field">
-                <label for="pages">Required pages or sections</label
-                ><textarea
-                  id="pages"
-                  name="pages"
-                  required
-                  rows="3"
-                  maxlength="1500"
-                ></textarea>
-              </div>
-              <div class="form-field">
-                <label for="content"
-                  >Are your logo, photos, and copy ready?</label
-                ><select id="content" name="content" required>
-                  <option value="">Select an option</option>
-                  <option>Everything is ready</option>
-                  <option>Some materials are ready</option>
-                  <option>I need help getting started</option>
-                  <option>I’m not sure yet</option>
-                </select>
-              </div>
-              <div class="form-field">
-                <label for="examples"
-                  >Example websites <span>(optional)</span></label
-                ><textarea
-                  id="examples"
-                  name="examples"
-                  rows="3"
-                  maxlength="1500"
-                ></textarea>
-              </div>
-            </fieldset>
-            <fieldset id="existing-fields" hidden disabled>
-              <legend>What should change?</legend>
-              <div class="form-field">
-                <label for="improvements">What needs improving?</label
-                ><textarea
-                  id="improvements"
-                  name="improvements"
-                  required
-                  rows="3"
-                  maxlength="1500"
-                ></textarea>
-              </div>
-              <div class="form-field">
-                <label for="preserve">What must stay?</label
-                ><textarea
-                  id="preserve"
-                  name="preserve"
-                  required
-                  rows="3"
-                  maxlength="1500"
-                ></textarea>
-              </div>
-              <div class="form-field">
-                <label for="platform"
-                  >Current platform <span>(optional)</span></label
-                ><input
-                  type="text"
-                  id="platform"
-                  name="platform"
-                  maxlength="250"
+                  placeholder="https://yourbusiness.com"
+                  disabled
                 />
               </div>
             </fieldset>
             <p class="form-explanation">
-              Prepare an email below or contact Jayden directly. Your details
-              stay on this page until you choose to send them. Please don’t
+              Send your inquiry through FormSubmit in a new tab and complete its
+              spam check. This page keeps your details if you need to retry.
+              Prefer your own email app? Choose Prepare email. Please don’t
               include passwords or payment details.
               <a href="privacy.html">Privacy &amp; data use</a>.
             </p>
-            <button
-              class="button button-blue"
-              id="send-inquiry"
-              hidden
-              disabled
-              type="submit"
-            >
+            <button class="button button-blue" id="send-inquiry" type="submit">
               Send inquiry ↗
             </button>
-            <button class="button button-blue" type="submit">
+            <button class="button button-dark" type="submit">
               Prepare email <span aria-hidden="true">↗</span>
             </button>
           </form>
@@ -284,7 +180,7 @@
           </section>
           <noscript
             ><p>
-              This inquiry form needs JavaScript. Email
+              Without JavaScript, use the form for a general inquiry or email
               <a href="mailto:jaydenlacy308@gmail.com"
                 >jaydenlacy308@gmail.com</a
               >
