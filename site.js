@@ -7,7 +7,7 @@ const categoryFromUrl = () =>
     ? "existing"
     : "new";
 const categoryLabel = (category) =>
-  category === "existing" ? "Improve my website" : "New website";
+  category === "existing" ? "Website Redesign" : "New Website";
 
 // Real links retain their normal browser behavior for modified clicks.
 const categoryLinks = [...document.querySelectorAll("[data-category]")];
