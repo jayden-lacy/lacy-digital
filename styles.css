@@ -912,3 +912,135 @@ p {
     transform: none;
   }
 }
+
+/* Shared page structure and navigation. */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+.site-header nav {
+  gap: 25px;
+}
+.site-header nav a[aria-current="page"] {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+.section h1 {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-weight: 600;
+}
+.section-heading h1 {
+  grid-column: 1;
+}
+.approach-intro h1,
+.pricing-intro h1 {
+  margin: 22px 0;
+}
+.approach-intro h1 span {
+  color: #7c8798;
+}
+.page-next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-block: 32px 72px;
+}
+.home-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding-bottom: 52px;
+}
+.home-links > a {
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+}
+.home-links > a > span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.home-links strong {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 7px;
+}
+.home-links a:hover strong {
+  color: var(--blue);
+}
+.contact-section h1 {
+  font-size: clamp(2.5rem, 4.7vw, 4.2rem);
+  margin: 21px 0;
+}
+.page-contact .contact-section {
+  margin-top: 35px;
+}
+.inquiry-guide {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+.inquiry-guide h2 {
+  font-size: 2.5rem;
+  margin-top: 22px;
+}
+.inquiry-guide ul {
+  padding-left: 20px;
+  color: var(--muted);
+}
+.inquiry-guide li {
+  margin-block: 10px;
+}
+.footer {
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 760px) {
+  .site-header {
+    height: auto;
+    padding-block: 22px 18px;
+    flex-wrap: wrap;
+  }
+  .site-header nav {
+    display: flex;
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 14px;
+    font-size: 0.85rem;
+  }
+  .section-heading h1 {
+    margin: 20px 0;
+  }
+  .page-next {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 10px 50px;
+  }
+  .home-links {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .inquiry-guide {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .page-contact .contact-section {
+    margin-top: 20px;
+  }
+  .page-about .approach {
+    margin-top: 20px;
+  }
+}
