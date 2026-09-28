@@ -1718,3 +1718,139 @@ button {
     padding: 20px;
   }
 }
+
+/* Launch pages use the existing type and spacing system. */
+.form-trap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.form-explanation a,
+.info-page p a,
+.footer p a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#inquiry-form > button {
+  margin: 8px 8px 0 0;
+}
+.info-page {
+  max-width: 900px;
+  padding-block: 80px;
+}
+.info-page h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  margin: 16px 0 28px;
+}
+.info-page > p {
+  max-width: 720px;
+  margin: 20px 0;
+  font-size: 1.1rem;
+}
+.info-page h2 {
+  font-size: 1.8rem;
+  margin: 42px 0 14px;
+}
+.info-page .button {
+  margin-top: 18px;
+}
+.work-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+.work-grid h2 {
+  font-size: 2rem;
+  margin: 12px 0;
+}
+.work-grid .eyebrow {
+  margin-top: 28px;
+}
+.work-grid .text-link {
+  display: inline-block;
+  margin-top: 20px;
+}
+.work-preview {
+  min-height: 340px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 18px;
+}
+.work-preview strong {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+.paint-preview {
+  background: #e6e9de;
+  color: #244b41;
+}
+.ledger-preview {
+  background: #dae5fb;
+  color: #243b69;
+}
+.ledger-preview strong {
+  font-family: Georgia, serif;
+  font-weight: normal;
+}
+.launch-work {
+  padding-block: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  border-top: 1px solid var(--line);
+}
+.launch-work h2 {
+  margin-top: 18px;
+}
+.launch-work .button {
+  margin-top: 26px;
+}
+.site-header nav a {
+  padding-block: 10px;
+}
+@media (max-width: 760px) {
+  .work-grid,
+  .launch-work {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .info-page {
+    padding-block: 48px;
+  }
+  .work-preview {
+    min-height: 300px;
+  }
+  .site-header nav {
+    flex-wrap: wrap;
+    row-gap: 2px;
+  }
+  .launch-work {
+    padding-block: 48px;
+  }
+}
+
+.payment-note {
+  padding-block: 32px 64px;
+  max-width: 900px;
+}
+.payment-note h2 {
+  font-size: 1.6rem;
+  margin-bottom: 16px;
+}
+.payment-note p {
+  max-width: 720px;
+}
+
+.footer p {
+  display: block;
+}
+.footer p a {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 8px 0;
+}

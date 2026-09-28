@@ -1,6 +1,7 @@
 "use strict";
 
-document.getElementById("year").textContent = String(new Date().getFullYear());
+const year = document.getElementById("year");
+if (year) year.textContent = String(new Date().getFullYear());
 const categoryFromUrl = () =>
   new URLSearchParams(location.search).get("category") === "existing"
     ? "existing"
@@ -101,6 +102,11 @@ if (form) {
     preview.hidden = true;
   });
   form.addEventListener("submit", (event) => {
+    if (event.submitter?.id === "send-inquiry") {
+      // Native POST keeps the provider's CAPTCHA and delivery errors visible.
+      // Open separately so a failed delivery never discards the filled form.
+      return;
+    }
     event.preventDefault();
     if (!form.reportValidity()) return;
     const data = new FormData(form);

@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Brush & Beam — Lacy Digital concept</title>
+    <meta
+      name="description"
+      content="A fictional website concept designed by Lacy Digital. Not a real business."
+    />
+    <link rel="stylesheet" href="demo.css" />
+    <style>
+      :root {
+        --paper: #f8f9f4;
+        --ink: #244b41;
+        --line: #ced7ca;
+        --panel: #e6e9de;
+      }
+      h1 em {
+        font-family: Georgia, serif;
+        font-weight: normal;
+      }
+      .room {
+        height: 430px;
+        background: #c5cdbb;
+        border-radius: 140px 140px 4px 4px;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.2s ease;
+      }
+      .window {
+        position: absolute;
+        top: 70px;
+        left: 40px;
+        width: 110px;
+        height: 160px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        padding: 7px;
+        background: #fafaf3;
+        box-shadow: 22px 22px 0 #ffffff20;
+      }
+      .window i {
+        background: #e8eef0;
+      }
+      .picture {
+        position: absolute;
+        right: 48px;
+        top: 130px;
+        width: 85px;
+        height: 110px;
+        background: #f8f4e9;
+        border: 8px solid #665844;
+      }
+      .picture:after {
+        content: "";
+        position: absolute;
+        inset: 20px 12px;
+        background: #71897a;
+        border-radius: 50% 50% 0 0;
+      }
+      .floor {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 82px;
+        background: #bca282;
+      }
+      .bench {
+        position: absolute;
+        bottom: 65px;
+        left: 16%;
+        width: 68%;
+        height: 76px;
+        background: #eee9dd;
+        border-radius: 12px 12px 0 0;
+        z-index: 1;
+        box-shadow: 0 13px 0 #665844;
+      }
+      .palette {
+        border: 0;
+        padding: 18px 0 0;
+        margin: 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .palette legend {
+        padding-top: 18px;
+        font-size: 14px;
+      }
+      .palette button {
+        padding: 8px 17px;
+        border: 1px solid var(--ink);
+        border-radius: 30px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+      .palette button[aria-pressed="true"] {
+        background: var(--ink);
+        color: white;
+      }
+      .color-note {
+        font-size: 12px !important;
+        margin: 12px 0 !important;
+      }
+      @media (max-width: 760px) {
+        .room {
+          height: 350px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="demo">
+      Fictional business · Website concept by Lacy Digital
+      <a href="../work.html">Back to concept work ↗</a>
+    </div>
+    <header class="wrap">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#"
+          >BRUSH &amp; BEAM<span aria-hidden="true">.</span></a
+        >
+        <div class="links">
+          <a href="#services">Services</a><a href="#process">Our process</a
+          ><a href="#contact">Get an estimate ↗</a>
+        </div>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="hero wrap">
+        <div>
+          <p class="eyebrow">Thoughtful residential painting</p>
+          <h1>A fresh coat.<br />A different<br /><em>feeling.</em></h1>
+          <p>
+            From the room you wake up in to the door you come home to. A
+            considered finish, with care at every step.
+          </p>
+          <a class="cta" href="#contact">Let’s talk about your space ↗</a>
+        </div>
+        <div>
+          <div
+            class="room"
+            role="img"
+            aria-label="Illustrated room showing the selected wall color"
+          >
+            <div class="window"><i></i><i></i><i></i><i></i></div>
+            <div class="picture"></div>
+            <div class="bench"></div>
+            <div class="floor"></div>
+          </div>
+          <fieldset class="palette">
+            <legend>Try a little color.</legend>
+            <button type="button" data-color="#c5cdbb" aria-pressed="true">
+              Sage</button
+            ><button type="button" data-color="#d7b5a3" aria-pressed="false">
+              Clay</button
+            ><button type="button" data-color="#a9bfcc" aria-pressed="false">
+              Coastal
+            </button>
+          </fieldset>
+          <p class="color-note" id="color-note" role="status">
+            Sage wall preview · Digital illustration; actual paint colors vary.
+          </p>
+        </div>
+      </section>
+      <section class="section wrap" id="services">
+        <p class="eyebrow">A finish for every space</p>
+        <h2>Inside. Outside.<br />Down to the details.</h2>
+        <div class="columns">
+          <article>
+            <h3>Interior painting</h3>
+            <p>
+              Walls, ceilings, and rooms that need a fresh start. Color planning
+              and surface preparation come before the first coat.
+            </p>
+          </article>
+          <article>
+            <h3>Exterior painting</h3>
+            <p>
+              A considered update for siding, doors, and exterior trim, with the
+              condition of each surface guiding the plan.
+            </p>
+          </article>
+          <article>
+            <h3>Trim &amp; cabinetry</h3>
+            <p>
+              Small details make a room feel finished. Discuss doors, molding,
+              and cabinet surfaces during your walkthrough.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="section wrap" id="process">
+        <p class="eyebrow">How a project takes shape</p>
+        <h2>Clear from the first conversation.</h2>
+        <div class="columns">
+          <article>
+            <h3>1. Walk through your space</h3>
+            <p>
+              Discuss your goals, surfaces, colors, and timing before a scope is
+              prepared.
+            </p>
+          </article>
+          <article>
+            <h3>2. Agree on the details</h3>
+            <p>
+              Review what’s included, the preparation needed, and the plan for
+              protecting your home.
+            </p>
+          </article>
+          <article>
+            <h3>3. Review the finish</h3>
+            <p>
+              A final walkthrough gives you time to look at the details and
+              discuss care.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="contact wrap" id="contact">
+        <p class="eyebrow">Like this direction?</p>
+        <h2>Let’s make it yours.</h2>
+        <p>
+          Brush &amp; Beam is a fictional painting business. This working
+          concept shows how Lacy Digital can present a local service business.
+          For a real website project, get in touch with Jayden.
+        </p>
+        <a class="cta" href="../contact.html?category=new&amp;package=business"
+          >Discuss a website with Lacy Digital ↗</a
+        >
+      </section>
+    </main>
+    <footer class="wrap">
+      Brush &amp; Beam · Fictional concept, not a client project.
+      <a href="../work.html">Lacy Digital</a>
+    </footer>
+    <script src="paint.js"></script>
+  </body>
+</html>
