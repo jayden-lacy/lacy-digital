@@ -1044,3 +1044,71 @@ main {
     margin-top: 20px;
   }
 }
+
+/* Overview sections link into fuller service and project information. */
+.detail-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--blue);
+  font-weight: 600;
+}
+.detail-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.section-detail-link {
+  color: var(--blue);
+  margin-top: 25px;
+}
+.detail-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 90px;
+  padding-block: 75px;
+  border-top: 1px solid var(--line);
+}
+.detail-section h2 {
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+  margin: 20px 0;
+}
+.detail-section p {
+  line-height: 1.8;
+}
+.detail-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+.detail-content > p {
+  margin-bottom: 30px;
+}
+.detail-content > p:last-child {
+  margin-bottom: 0;
+}
+.detail-deliverables {
+  padding: 25px;
+  border-radius: 12px;
+  background: var(--pale);
+}
+.detail-deliverables ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+  color: var(--muted);
+}
+.detail-deliverables li {
+  margin-top: 9px;
+}
+.detail-deliverables p + p {
+  margin-top: 15px;
+}
+@media (max-width: 760px) {
+  .detail-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-block: 50px;
+  }
+  .detail-deliverables {
+    padding: 22px;
+  }
+}
