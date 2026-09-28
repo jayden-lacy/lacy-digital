@@ -82,7 +82,9 @@ if (form) {
     preview.hidden = true;
   });
   form.addEventListener("submit", (event) => {
-    if (event.submitter?.id === "send-inquiry") {
+    if (event.submitter?.id !== "prepare-email") {
+      document.getElementById("submission-status").textContent =
+        "Continue in the FormSubmit tab to complete the spam check. Your inquiry is not confirmed until that page reports success. If no tab opens, use Prepare email below.";
       // Native POST keeps the provider's CAPTCHA and delivery errors visible.
       // Open separately so a failed delivery never discards the filled form.
       return;
@@ -113,6 +115,8 @@ if (form) {
     summary.value = lines.join("\n");
     document.getElementById("open-email").href =
       `mailto:jaydenlacy308@gmail.com?subject=${encodeURIComponent(`${categoryLabel(value("category"))} inquiry — ${item?.name || "Custom scope"}`)}&body=${encodeURIComponent(summary.value)}`;
+    document.getElementById("open-gmail").href =
+      `https://mail.google.com/mail/?view=cm&fs=1&to=jaydenlacy308@gmail.com&su=${encodeURIComponent(`${categoryLabel(value("category"))} inquiry — ${item?.name || "Custom scope"}`)}&body=${encodeURIComponent(summary.value)}`;
     copyStatus.textContent = "";
     preview.hidden = false;
     document.getElementById("email-preview-title").focus();
